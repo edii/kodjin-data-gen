@@ -39,7 +39,7 @@ class Patient:
             first_name = random_list(self._names[gender]["first"])
             last_name = random_list(self._names[gender]["last"])
             (birth_date, age) = random_birth_date(self._ages, gender)
-            identifier = str(random_randrange(100_000, 100_000_000))
+            identifier = str(random_randrange(100_000, 1000_000_000))
             occupation = self._terminology["occupation"].pick().code
             mobile_number = self._faker.random_number(digits=10, fix_len=True)
 
@@ -59,6 +59,8 @@ class Patient:
                 "address_line": self._faker.address().split("\n"),
                 "address_post": self._faker.postcode(),
                 "address_city": self._faker.city(),
+                "address_district": f"{self._faker.city()} {self._faker.word()}",
+                "address_state": self._faker.state(),
                 "telecom_email": self._faker.free_email(),
                 "telecom_mobile": f'+30{mobile_number}',
             }

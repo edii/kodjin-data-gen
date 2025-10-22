@@ -140,7 +140,9 @@
             ],
             "city": {{ address_city | tojson }},
             "postalCode": {{ address_post | tojson }},
-            "country": "Saudi Arabia"
+            "country": "Saudi Arabia",
+            "district": "{{ address_district }}",
+            "state": "{{ address_state }}"
         }
     ],
     "resourceType": "Patient"

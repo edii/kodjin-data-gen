@@ -67,7 +67,7 @@ class Encounter:
             param = {
                 "id": str(uuid4()),
                 "status_text": Status.GENERATED,
-                "status": Status.ACTIVE,
+                "status": Status.FINISHED,
                 "last_updated": datetime.now(),
                 "ref_organization": f"Organization/{organization_param['id']}",
                 "ref_patient": f"Patient/{patient_param['id']}",
