@@ -1,0 +1,52 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "subscriber-relationship.json",
+  "url": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+  "version": "4.0.1",
+  "name": "SubscriberRelationshipCodes",
+  "title": "SubscriberRelationshipCodes",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-07-30",
+  "publisher": "HL7International.",
+  "description": "ThisvaluesetincludescodesfortherelationshipbetweentheSubscriberandtheBeneficiary(insured/coveredparty/patient).",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "child",
+      "display": "Child",
+      "definition": "TheBeneficiaryisachildoftheSubscriber"
+    },
+    {
+      "code": "parent",
+      "display": "Parent",
+      "definition": "TheBeneficiaryisaparentoftheSubscriber"
+    },
+    {
+      "code": "spouse",
+      "display": "Spouse",
+      "definition": "TheBeneficiaryisaspouseorequivalentoftheSubscriber"
+    },
+    {
+      "code": "common",
+      "display": "CommonLawSpouse",
+      "definition": "TheBeneficiaryisacommonlawspouseorequivalentoftheSubscriber"
+    },
+    {
+      "code": "other",
+      "display": "Other",
+      "definition": "TheBeneficiaryhassomeotherrelationshiptheSubscriber"
+    },
+    {
+      "code": "self",
+      "display": "Self",
+      "definition": "TheBeneficiaryistheSubscriber"
+    },
+    {
+      "code": "injured",
+      "display": "InjuredParty",
+      "definition": "TheBeneficiaryiscoveredunderinsuranceofthesubscriberduetoaninjury"
+    }
+  ]
+}

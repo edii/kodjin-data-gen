@@ -1,0 +1,32 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "response-code",
+  "url": "http://hl7.org/fhir/response-code",
+  "version": "4.0.1",
+  "name": "ResponseType",
+  "title": "ResponseType",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-07-30",
+  "publisher": "HL7International.",
+  "description": "Thekindofresponsetoamessage",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "ok",
+      "display": "OK",
+      "definition": "Themessagewasacceptedandprocessedwithouterror."
+    },
+    {
+      "code": "transient-error",
+      "display": "TransientError",
+      "definition": "Someinternalunexpectederroroccurred-waitandtryagain.Note-thisisusuallyusedforthingslikedatabaseunavailable,whichmaybeexpectedtoresolve,thoughhumaninterventionmayberequired."
+    },
+    {
+      "code": "fatal-error",
+      "display": "FatalError",
+      "definition": "Themessagewasrejectedbecauseofaproblemwiththecontent.Thereisnopointinre-sendingwithoutchange.TheresponsenarrativeSHALLdescribetheissue."
+    }
+  ]
+}

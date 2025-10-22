@@ -1,0 +1,37 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "communication-category",
+  "url": "http://terminology.hl7.org/CodeSystem/communication-category",
+  "version": "1.0.0",
+  "name": "CommunicationCategory",
+  "title": "CommunicationCategory",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-07-30",
+  "publisher": "HL7International.",
+  "description": "Codesforgeneralcategoriesofcommunicationssuchasalerts,instructions,etc.",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "alert",
+      "display": "Alert",
+      "definition": "Thecommunicationconveysanalert."
+    },
+    {
+      "code": "notification",
+      "display": "Notification",
+      "definition": "Thecommunicationconveysanotification."
+    },
+    {
+      "code": "reminder",
+      "display": "Reminder",
+      "definition": "Thecommunicationconveysareminder."
+    },
+    {
+      "code": "instruction",
+      "display": "Instruction",
+      "definition": "Thecommunicationconveysaninstruction"
+    }
+  ]
+}

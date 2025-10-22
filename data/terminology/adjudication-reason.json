@@ -1,0 +1,372 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "adjudication-reason",
+  "url": "http://nphies.sa/terminology/CodeSystem/adjudication-reason",
+  "version": "1.0.0",
+  "name": "AdjudicationReason",
+  "title": "AdjudicationReason",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-07-30",
+  "publisher": "nphies",
+  "description": "Acodesupportingtheunderstandingoftheadjudicationresultandexplainingvariancefromexpectedamountcodes",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "AD-1-1",
+      "definition": "Diagnosis is inconsistent with provider type",
+      "display": "Diagnosis is inconsistent with provider type"
+    },
+    {
+      "code": "AD-1-2",
+      "definition": "Diagnosis is inconsistent with clinician specialty",
+      "display": "Diagnosis is inconsistent with clinician specialty"
+    },
+    {
+      "code": "AD-1-3",
+      "definition": "Diagnosis is inconsistent with encounter type",
+      "display": "Diagnosis is inconsistent with encounter type"
+    },
+    {
+      "code": "AD-1-4",
+      "definition": "Diagnosis is inconsistent with service/procedure",
+      "display": "Diagnosis is inconsistent with service/procedure"
+    },
+    {
+      "code": "AD-1-5",
+      "definition": "Service/procedure is inconsistent with provider type",
+      "display": "Service/procedure is inconsistent with provider type"
+    },
+    {
+      "code": "AD-1-6",
+      "definition": "Service/procedure is inconsistent with clinician specialty",
+      "display": "Service/procedure is inconsistent with clinician specialty"
+    },
+    {
+      "code": "AD-1-7",
+      "definition": "Service/procedure is inconsistent with encounter type",
+      "display": "Service/procedure is inconsistent with encounter type"
+    },
+    {
+      "code": "AD-1-8",
+      "definition": "Clinician registration is invalid or expired",
+      "display": "Clinician registration is invalid or expired"
+    },
+    {
+      "code": "AD-1-9",
+      "definition": "Mismatch in member information",
+      "display": "Mismatch in member information"
+    },
+    {
+      "code": "AD-2-1",
+      "definition": "Date of birth follows date of service/procedure",
+      "display": "Date of birth follows date of service/procedure"
+    },
+    {
+      "code": "AD-2-2",
+      "definition": "Date of death precedes the date of service/procedure",
+      "display": "Date of death precedes the date of service/procedure"
+    },
+    {
+      "code": "AD-2-3",
+      "definition": "Date of service/procedure is prior to coverage effective date",
+      "display": "Date of service/procedure is prior to coverage effective date"
+    },
+    {
+      "code": "AD-2-4",
+      "definition": "Duplicate service/procedure code based on the date",
+      "display": "Duplicate service/procedure code based on the date"
+    },
+    {
+      "code": "AD-2-5",
+      "definition": "Time limit for submission has expired",
+      "display": "Time limit for submission has expired"
+    },
+    {
+      "code": "AD-2-6",
+      "definition": "Service was performed outside authorization validity date",
+      "display": "Service was performed outside authorization validity date"
+    },
+    {
+      "code": "AD-3-1",
+      "definition": "Authorization not required for service/procedure",
+      "display": "Authorization not required for service/procedure"
+    },
+    {
+      "code": "AD-3-2",
+      "definition": "Use bundled code",
+      "display": "Use bundled code"
+    },
+    {
+      "code": "AD-3-3",
+      "definition": "Room services and food are included in room and board expenses",
+      "display": "Room services and food are included in room and board expenses"
+    },
+    {
+      "code": "AD-3-4",
+      "definition": "Incorrect DRG calculated",
+      "display": "Incorrect DRG calculated"
+    },
+    {
+      "code": "AD-3-5",
+      "definition": "Diagnosis is inconsistent with patient's age ",
+      "display": "Diagnosis is inconsistent with patient's age "
+    },
+    {
+      "code": "AD-3-6",
+      "definition": "Diagnosis is inconsistent with patient's gender",
+      "display": "Diagnosis is inconsistent with patient's gender"
+    },
+    {
+      "code": "AD-3-7",
+      "definition": "Service/procedure is inconsistent with patient's age",
+      "display": "Service/procedure is inconsistent with patient's age"
+    },
+    {
+      "code": "AD-3-8",
+      "definition": "Service/procedure is inconsistent with patient's gender",
+      "display": "Service/procedure is inconsistent with patient's gender"
+    },
+    {
+      "code": "CV-1-1",
+      "definition": "Provider is out of beneficiary network ",
+      "display": "Provider is out of beneficiary network "
+    },
+    {
+      "code": "CV-1-2",
+      "definition": "Provider is not eligible for the service",
+      "display": "Provider is not eligible for the service"
+    },
+    {
+      "code": "CV-1-3",
+      "definition": "Diagnosis is not covered",
+      "display": "Diagnosis is not covered"
+    },
+    {
+      "code": "CV-1-4",
+      "definition": "Service/procedure is not covered",
+      "display": "Service/procedure is not covered"
+    },
+    {
+      "code": "CV-1-5",
+      "definition": "Service/procedure does not meet the criteria of urgency criteria  ",
+      "display": "Service/procedure does not meet the criteria of urgency criteria  "
+    },
+    {
+      "code": "CV-1-6",
+      "definition": "Pre-existing diagnosis/condition is not covered",
+      "display": "Pre-existing diagnosis/condition is not covered"
+    },
+    {
+      "code": "CV-1-7",
+      "definition": "Pre-existing diagnosis/condition was not disclosed",
+      "display": "Pre-existing diagnosis/condition was not disclosed"
+    },
+    {
+      "code": "CV-1-8",
+      "definition": "Annual limit/sublimit amount exceeded ",
+      "display": "Annual limit/sublimit amount exceeded "
+    },
+    {
+      "code": "CV-1-9",
+      "definition": "Consultation is within 14-day follow up period",
+      "display": "Consultation is within 14-day follow up period"
+    },
+    {
+      "code": "CV-1-10",
+      "definition": "Work related injury is not covered",
+      "display": "Work related injury is not covered"
+    },
+    {
+      "code": "CV-2-1",
+      "definition": "Patient is not a covered member",
+      "display": "Patient is not a covered member"
+    },
+    {
+      "code": "CV-3-1",
+      "definition": "Benefit maximum for this time period or occurrence has been reached",
+      "display": "Benefit maximum for this time period or occurrence has been reached"
+    },
+    {
+      "code": "CV-3-2",
+      "definition": "Service/procedure may be appropriate, but too frequent",
+      "display": "Service/procedure may be appropriate, but too frequent"
+    },
+    {
+      "code": "CV-3-3",
+      "definition": "Service/procedure exceeds number of times per life ",
+      "display": "Service/procedure exceeds number of times per life "
+    },
+    {
+      "code": "CV-3-4",
+      "definition": "Service/procedure exceeds number of times per policy",
+      "display": "Service/procedure exceeds number of times per policy"
+    },
+    {
+      "code": "CV-3-5",
+      "definition": "Service/procedure is above Saudi Riyals threshold per policy",
+      "display": "Service/procedure is above Saudi Riyals threshold per policy"
+    },
+    {
+      "code": "CV-4-1",
+      "definition": "Inappropriate medication dose",
+      "display": "Inappropriate medication dose"
+    },
+    {
+      "code": "CV-4-2",
+      "definition": "Inappropriate medication duration",
+      "display": "Inappropriate medication duration"
+    },
+    {
+      "code": "CV-4-3",
+      "definition": "Authorization quantity exceeds prescription quantity",
+      "display": "Authorization quantity exceeds prescription quantity"
+    },
+    {
+      "code": "CV-4-4",
+      "definition": "Prescription out of date",
+      "display": "Prescription out of date"
+    },
+    {
+      "code": "CV-4-5",
+      "definition": "Medication is not listed in formulary",
+      "display": "Medication is not listed in formulary"
+    },
+    {
+      "code": "CV-4-6",
+      "definition": "Milk Products do not meet coverage criteria",
+      "display": "Milk Products do not meet coverage criteria"
+    },
+    {
+      "code": "CV-4-7",
+      "definition": "Device is not consistent with the service/procedure",
+      "display": "Device is not consistent with the service/procedure"
+    },
+    {
+      "code": "CV-4-8",
+      "definition": "Refill too soon",
+      "display": "Refill too soon"
+    },
+    {
+      "code": "CV-4-9",
+      "definition": "Service/procedure/device/medication was included within another service/procedure",
+      "display": "Service/procedure/device/medication was included within another service/procedure"
+    },
+    {
+      "code": "CV-4-10",
+      "definition": "Device/medications is not approved by the Saudi FDA",
+      "display": "Device/medications is not approved by the Saudi FDA"
+    },
+    {
+      "code": "MN-1-1",
+      "definition": "Service is not clinically justified based on clinical practice guideline, without additional supporting diagnosis ",
+      "display": "Service is not clinically justified based on clinical practice guideline, without additional supporting diagnosis "
+    },
+    {
+      "code": "MN-1-2",
+      "definition": "Patient is enrolled in hospice/palliative care",
+      "display": "Patient is enrolled in hospice/palliative care"
+    },
+    {
+      "code": "SE-1-1",
+      "definition": "Vital signs are inadequate or missing",
+      "display": "Vital signs are inadequate or missing"
+    },
+    {
+      "code": "SE-1-2",
+      "definition": "History of present illness is inadequate or missing ",
+      "display": "History of present illness is inadequate or missing "
+    },
+    {
+      "code": "SE-1-3",
+      "definition": "Chief complaint is inadequate or missing",
+      "display": "Chief complaint is inadequate or missing"
+    },
+    {
+      "code": "SE-1-4",
+      "definition": "Physical examination is inadequate or missing",
+      "display": "Physical examination is inadequate or missing"
+    },
+    {
+      "code": "SE-1-5",
+      "definition": "Past medical history is inadequate or missing",
+      "display": "Past medical history is inadequate or missing"
+    },
+    {
+      "code": "SE-1-6",
+      "definition": "Investigation result is inadequate or missing",
+      "display": "Investigation result is inadequate or missing"
+    },
+    {
+      "code": "SE-1-7",
+      "definition": "Type of diagnosis is inadequate or missing",
+      "display": "Type of diagnosis is inadequate or missing"
+    },
+    {
+      "code": "SE-1-8",
+      "definition": "Treatment plan is inadequate or missing",
+      "display": "Treatment plan is inadequate or missing"
+    },
+    {
+      "code": "SE-1-9",
+      "definition": "Quantity of service/procedure is inappropriate or missing",
+      "display": "Quantity of service/procedure is inappropriate or missing"
+    },
+    {
+      "code": "SE-1-10",
+      "definition": "Patient occupation is inappropriate or missing",
+      "display": "Patient occupation is inappropriate or missing"
+    },
+    {
+      "code": "BE-1-1",
+      "definition": "Co-pay was not collected from member",
+      "display": "Co-pay was not collected from member"
+    },
+    {
+      "code": "BE-1-2",
+      "definition": "Service was not performed",
+      "display": "Service was not performed"
+    },
+    {
+      "code": "BE-1-3",
+      "definition": "Submission not compliant with contractual agreement between provider & payer",
+      "display": "Submission not compliant with contractual agreement between provider & payer"
+    },
+    {
+      "code": "BE-1-4",
+      "definition": "Preauthorization is required and was not obtained",
+      "display": "Preauthorization is required and was not obtained"
+    },
+    {
+      "code": "BE-1-5",
+      "definition": "Claim information is inconsistent with preauthorized services",
+      "display": "Claim information is inconsistent with preauthorized services"
+    },
+    {
+      "code": "BE-1-6",
+      "definition": "Calculation discrepancy ",
+      "display": "Calculation discrepancy "
+    },
+    {
+      "code": "BE-1-7",
+      "definition": "Incorrect billing regime",
+      "display": "Incorrect billing regime"
+    },
+    {
+      "code": "BE-1-8",
+      "definition": "Appeal procedures not followed or time limits not met",
+      "display": "Appeal procedures not followed or time limits not met"
+    },
+    {
+      "code": "BE-1-9",
+      "definition": "Recovery of Payment",
+      "display": "Recovery of Payment"
+    },
+    {
+      "code": "BE-1-10",
+      "definition": "Fraud",
+      "display": "Fraud"
+    }
+  ]
+}

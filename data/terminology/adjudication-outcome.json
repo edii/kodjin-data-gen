@@ -1,0 +1,42 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "adjudication-outcome",
+  "url": "http://nphies.sa/terminology/CodeSystem/adjudication-outcome",
+  "version": "1.0.0",
+  "name": "AdjudicationOutcome",
+  "title": "AdjudicationOutcome",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-07-30",
+  "publisher": "nphies",
+  "description": "Acodeindicatingtheoutcomeoftheadjudicationsuchasrejected,partiallyapproved/paidorapproved/paidassubmitted.",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "approved",
+      "display": "Approved",
+      "definition": "Allitemsapproved"
+    },
+    {
+      "code": "rejected",
+      "display": "Rejected",
+      "definition": "Allitemsrejected"
+    },
+    {
+      "code": "partial",
+      "display": "PartiallyApproved",
+      "definition": "Atleastoneitemrejected"
+    },
+    {
+      "code": "not-required",
+      "display": "NotRequired",
+      "definition": "NoAuthorizationisrequiredforthisrequest"
+    },
+    {
+      "code": "pended",
+      "display": "Pended",
+      "definition": "Theprocessingoftherequestedhasbeenpendedawaitingfurtherinformationorprocessing"
+    }
+  ]
+}

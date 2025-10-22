@@ -1,0 +1,52 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "advanceAuth-reason",
+  "url": "http://nphies.sa/terminology/CodeSystem/advancedAuth-reason",
+  "version": "1.0.0",
+  "name": "advanceAuth-reason",
+  "title": "advanceAuth-reason",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-07-30",
+  "publisher": "nphies",
+  "description": "Codetoindicatethereasonforsendinganadvanced-preAuthorization",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "refill",
+      "display": "Refill",
+      "definition": "Whenapayersendanadvanceauthorizationformedicationrefill"
+    },
+    {
+      "code": "second-opinion",
+      "display": "Secondopinion",
+      "definition": "Whenapayersendanadvanceauthorizationformedicalsecondopinion"
+    },
+    {
+      "code": "referral",
+      "display": "Referral",
+      "definition": "Whenapayersendanadvanceauthorizationforpatientreferral"
+    },
+    {
+      "code": "authorization",
+      "display": "Authorization",
+      "definition": "Whenapayersendanadvanceauthorizationforservicetoberendered"
+    },
+    {
+      "code": "non-network",
+      "display": "Nonnetwork",
+      "definition": "Whenapayersendanadvanceauthorizationforanonnetworkprovider"
+    },
+    {
+      "code": "medication-dispense",
+      "display": "Medicationdispense",
+      "definition": "Whenapayersendanadvanceauthorizationformedicationdispense"
+    },
+    {
+      "code": "home-healthcare",
+      "display": "Homehealthcare",
+      "definition": "Whenapayersendanadvanceauthorizationforhomehealthcare"
+    }
+  ]
+}
