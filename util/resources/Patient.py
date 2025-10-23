@@ -39,7 +39,8 @@ class Patient:
             first_name = random_list(self._names[gender]["first"])
             last_name = random_list(self._names[gender]["last"])
             (birth_date, age) = random_birth_date(self._ages, gender)
-            identifier = str(random_randrange(100_000, 1000_000_000))
+            identifier = f"1{self._faker.random_number(digits=9, fix_len=True)}"
+
             occupation = self._terminology["occupation"].pick().code
             mobile_number = self._faker.random_number(digits=10, fix_len=True)
 
