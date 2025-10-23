@@ -1,6 +1,5 @@
 import logging
 import json
-from uuid import uuid4
 from jinja2 import Environment
 from faker import Faker
 from util.consts import Status
@@ -35,17 +34,17 @@ class Patient:
         self._log.info(f"Prepare patient")
 
         for i in range(0, total):
+            _id = str(i+1)
             gender = random_list(Gender().get_all())
             first_name = random_list(self._names[gender]["first"])
             last_name = random_list(self._names[gender]["last"])
             (birth_date, age) = random_birth_date(self._ages, gender)
             identifier = f"1{self._faker.random_number(digits=9, fix_len=True)}"
-
             occupation = self._terminology["occupation"].pick().code
             mobile_number = self._faker.random_number(digits=10, fix_len=True)
 
             param = {
-                "id": str(uuid4()),
+                "id": _id,
                 "status": Status.GENERATED,
                 "last_updated": datetime.now(),
                 "gender": gender,

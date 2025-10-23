@@ -1,6 +1,5 @@
 import logging
 import json
-from uuid import uuid4
 from jinja2 import Environment
 from faker import Faker
 from util.consts import Status
@@ -32,8 +31,10 @@ class Organization:
         name = self._faker.company_suffix()
 
         for i in range(0, total):
+            _id = str(i+1)
+
             param = {
-                "id": str(uuid4()),
+                "id": _id,
                 "name": f"test {name}",
                 "status": Status.GENERATED,
                 "last_updated": datetime.now(),
