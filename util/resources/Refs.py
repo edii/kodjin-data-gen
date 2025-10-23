@@ -2,6 +2,8 @@ from util.helper.helper import random_randrange
 
 
 class Refs:
+    _random_start: int = 1
+
     def __init__(self,
                  organization_total: int = 0,
                  patient_total: int = 0,
@@ -15,7 +17,9 @@ class Refs:
         self._observation_total = observation_total
 
     def get_ref_organization(self) -> str:
-        rand_id = random_randrange(0, self._organization_total)
+        rand_id = self._organization_total
+        if self._organization_total > 1:
+            rand_id = random_randrange(self._random_start, self._organization_total)
 
         return f"Organization/{rand_id}"
 
@@ -23,7 +27,9 @@ class Refs:
         return self._organization_total == 0
 
     def get_ref_patient(self) -> str:
-        rand_id = random_randrange(0, self._patient_total)
+        rand_id = self._patient_total
+        if self._patient_total > 1:
+            rand_id = random_randrange(self._random_start, self._patient_total)
 
         return f"Patient/{rand_id}"
 
@@ -31,7 +37,9 @@ class Refs:
         return self._patient_total == 0
 
     def get_ref_practitioner(self) -> str:
-        rand_id = random_randrange(0, self._practitioner_total)
+        rand_id = self._practitioner_total
+        if self._practitioner_total > 1:
+            rand_id = random_randrange(self._random_start, self._practitioner_total)
 
         return f"Practitioner/{rand_id}"
 
@@ -39,7 +47,9 @@ class Refs:
         return self._practitioner_total == 0
 
     def get_ref_encounter(self) -> str:
-        rand_id = random_randrange(0, self._encounter_total)
+        rand_id = self._encounter_total
+        if self._encounter_total > 1:
+            rand_id = random_randrange(self._random_start, self._encounter_total)
 
         return f"Encounter/{rand_id}"
 
@@ -47,7 +57,9 @@ class Refs:
         return self._encounter_total == 0
 
     def get_ref_observation(self) -> str:
-        rand_id = random_randrange(0, self._observation_total)
+        rand_id = self._observation_total
+        if self._observation_total > 1:
+            rand_id = random_randrange(self._random_start, self._observation_total)
 
         return f"Observation/{rand_id}"
 
