@@ -38,13 +38,14 @@ class Practitioner:
             last_name = random_list(self._names[gender]["last"])
             (birth_date, age) = random_birth_date(self._ages, gender)
             mobile_number = self._faker.random_number(digits=10, fix_len=True)
+            identifier = f"1{self._faker.random_number(digits=9, fix_len=True)}"
 
             param = {
                 "id": _id,
                 "gender": gender,
                 "status": Status.GENERATED,
                 "last_updated": datetime.now(),
-                "identifier": f"N-P-{str(i).zfill(5)}",
+                "identifier": identifier,
                 "first_name": str(first_name["display"]),
                 "first_name_en": first_name["code"],
                 "last_name": last_name["display"],

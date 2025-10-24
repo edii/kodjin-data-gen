@@ -66,13 +66,22 @@ class Condition:
     def get_params(self) -> List[Dict]:
         return self._params
 
+    def union_refs(self, union_id: Optional[str] = None) -> Dict:
+        data = {}
+
+        if union_id is not None:
+            data["ref_encounter"] = f"Encounter/{union_id}"
+
+        return data
+
+    def render_data(self, param: Dict) -> str:
+        template = self._jinja.get_template(self.TEMPLATE_NAME)
+        return template.render(param)
+
     def create(self):
         self._log.info(f"Generating %s condition", len(self.get_params()))
 
         with open(self.get_output_dir(), "w") as output:
             for param in self.get_params():
-                template = self._jinja.get_template(self.TEMPLATE_NAME)
-                condition_data = template.render(param)
-
-                output.write(json.dumps(json.loads(condition_data)))
+                output.write(json.dumps(json.loads(self.render_data(param))))
                 output.write("\n")
