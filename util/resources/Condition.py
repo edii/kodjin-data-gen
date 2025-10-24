@@ -1,16 +1,11 @@
 import logging
 import json
-from uuid import uuid4
 from jinja2 import Environment
 from faker import Faker
 from util.consts import Status
 from datetime import datetime
 from typing import List, Dict, Optional
-from util.resources.Practitioner import Practitioner
-from util.resources.Patient import Patient
-from util.resources.Organization import Organization
-from util.resources.Encounter import Encounter
-from util.helper.helper import random_list
+from util.resources.Refs import Refs
 
 
 class Condition:
@@ -24,43 +19,28 @@ class Condition:
         self._faker = faker
         self._output_dir = output_dir
         self._params: List[Dict] = []
+        self._refs: Optional[Refs] = None
 
-        # refs
-        self._organization: Optional[Organization] = None
-        self._patient: Optional[Patient] = None
-        self._practitioner: Optional[Practitioner] = None
-        self._encounter: Optional[Encounter] = None
-
-    def set_organization(self, organization: Optional[Organization]):
-        self._organization = organization
-
-    def set_patient(self, patient: Optional[Patient]):
-        self._patient = patient
-
-    def set_practitioner(self, practitioner: Optional[Practitioner]):
-        self._practitioner = practitioner
-
-    def set_encounter(self, encounter: Optional[Encounter]):
-        self._encounter = encounter
+    def set_refs(self, refs: Optional[Refs]):
+        self._refs= refs
 
     def get_output_dir(self) -> str:
         return f"{self._output_dir}/{type(self).__name__}.ndjson"
 
     def validate(self):
-        if (self._organization is None or
-                (self._organization is not None and len(self._organization.get_params()) == 0)):
+        if self._refs is None:
+            raise Exception("Required set refs object")
+
+        if self._refs.is_organization_zero():
             raise Exception("Required ref for organization")
 
-        if (self._patient is None or
-                (self._patient is not None and len(self._patient.get_params()) == 0)):
+        if self._refs.is_patient_zero():
             raise Exception("Required ref for patient")
 
-        if (self._practitioner is None or
-                (self._practitioner is not None and len(self._practitioner.get_params()) == 0)):
+        if self._refs.is_practitioner_zero():
             raise Exception("Required ref for practitioner")
 
-        if (self._encounter is None or
-                (self._encounter is not None and len(self._encounter.get_params()) == 0)):
+        if self._refs.is_encounter_zero():
             raise Exception("Required ref for encounter")
 
     def process(self, total: int = 0):
@@ -69,19 +49,16 @@ class Condition:
         self._log.info(f"Prepare condition")
 
         for i in range(0, total):
-            organization_param = random_list(self._organization.get_params())
-            patient_param = random_list(self._patient.get_params())
-            practitioner_param = random_list(self._practitioner.get_params())
-            encounter_param = random_list(self._encounter.get_params())
+            _id = str(i+1)
 
             param = {
-                "id": str(uuid4()),
+                "id": _id,
                 "status_text": Status.GENERATED,
                 "last_updated": datetime.now(),
-                "ref_organization": f"Organization/{organization_param['id']}",
-                "ref_patient": f"Patient/{patient_param['id']}",
-                "ref_practitioner": f"Practitioner/{practitioner_param['id']}",
-                "ref_encounter": f"Encounter/{encounter_param['id']}",
+                "ref_organization": self._refs.get_ref_organization(),
+                "ref_patient": self._refs.get_ref_patient(),
+                "ref_practitioner": self._refs.get_ref_practitioner(),
+                "ref_encounter": self._refs.get_ref_encounter(),
             }
 
             self._params.append(param)
