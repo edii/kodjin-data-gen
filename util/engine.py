@@ -9,6 +9,7 @@ from util.resources.Encounter import Encounter
 from util.resources.Condition import Condition
 from util.resources.Observation import Observation
 from util.resources.Composition import Composition
+from util.resources.Union import Union
 from util.resources.Refs import Refs
 
 
@@ -23,14 +24,15 @@ class Engine:
                  jinja: Environment = Environment,
                  faker: Faker = Faker):
         self._cfg = cfg
-        # self._names = names
+        self._output_dir = output_dir
         self._log = log
         self._refs = Refs(
             organization_total=cfg["organization_total"],
             patient_total=cfg["patient_total"],
             practitioner_total=cfg["practitioner_total"],
-            encounter_total=cfg["encounter_total"],
+            encounter_total=cfg["encounter_condition"],
             observation_total=cfg["observation_total"],
+            condition_total=cfg["encounter_condition"],
         )
 
         self._organization = Organization(output_dir=output_dir, log=log, jinja=jinja, faker=faker)
@@ -62,13 +64,14 @@ class Engine:
         self._patient.process(self._cfg["patient_total"])
         self._patient.create()
 
-        # Encounter
-        self._encounter.process(self._cfg["encounter_total"])
-        self._encounter.create()
-
-        # Condition
-        self._condition.process(self._cfg["condition_total"])
-        self._condition.create()
+        # union Encounter_Condition
+        union_encounter_condition = Union(
+            name="Encounter_Condition",
+            resources=[self._encounter, self._condition],
+            output_dir=self._output_dir,
+            log=self._log)
+        union_encounter_condition.process(self._cfg["encounter_condition"])
+        union_encounter_condition.create()
 
         # Observation
         self._observation.process(self._cfg["observation_total"])
