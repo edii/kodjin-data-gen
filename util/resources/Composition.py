@@ -46,6 +46,9 @@ class Composition:
         if self._refs.is_observation_zero():
             raise Exception("Required ref for observation")
 
+        if self._refs.is_condition_zero():
+            raise Exception("Required ref for condition")
+
     def process(self, total: int = 0):
         self.validate()
 
@@ -64,6 +67,7 @@ class Composition:
                 "ref_practitioner": self._refs.get_ref_practitioner(),
                 "ref_encounter": self._refs.get_ref_encounter(),
                 "ref_observation": self._refs.get_ref_observation(),
+                "ref_condition": self._refs.get_ref_condition(),
             }
 
             self._params.append(param)
