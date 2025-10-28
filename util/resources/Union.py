@@ -6,12 +6,14 @@ from typing import List, Optional, Dict
 class Union:
     def __init__(self, name: str, resources: Optional[List] = None,
                  output_dir: str = "",
-                 log: logging.Logger = logging.getLogger("encounter")):
+                 log: logging.Logger = None):
         self._name = name
         self._resources = resources
-        self._log = log
         self._total = 0
         self._output_dir = output_dir
+        self._log = logging.getLogger(name)
+        if log is not None:
+            self._log = log
 
     def get_output_dir(self) -> str:
         return f"{self._output_dir}/{self._name}.ndjson"
@@ -30,13 +32,13 @@ class Union:
             resource.process(total)
 
     def render_data(self, resource, params: List[Dict], current_index: int) -> Dict:
-        for i, param in enumerate(params):
-            if i == current_index:
-                new_param = param | resource.union_refs(union_id=str(i+1))
+        try:
+            new_param = params[current_index] | resource.union_refs(union_id=str(current_index+1))
 
-                return json.loads(resource.render_data(new_param))
+            return json.loads(resource.render_data(new_param))
+        except IndexError:
 
-        return {}
+            return {}
 
     def create(self):
         self._log.info(f"Generating %s {self._name}", self._total)
