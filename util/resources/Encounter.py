@@ -40,6 +40,9 @@ class Encounter:
         if self._refs.is_practitioner_zero():
             raise Exception("Required ref for practitioner")
 
+        if self._refs.is_condition_zero():
+            raise Exception("Required ref for condition")
+
     def process(self, total: int = 0):
         self.validate()
 
@@ -56,20 +59,30 @@ class Encounter:
                 "ref_organization": self._refs.get_ref_organization(),
                 "ref_patient": self._refs.get_ref_patient(),
                 "ref_practitioner": self._refs.get_ref_practitioner(),
+                "ref_condition": self._refs.get_ref_condition(),
             }
 
             self._params.append(param)
 
+    def union_refs(self, union_id: Optional[str] = None) -> Dict:
+        data = {}
+
+        if union_id is not None:
+            data["ref_condition"] = f"Condition/{union_id}"
+
+        return data
+
     def get_params(self) -> List[Dict]:
         return self._params
+
+    def render_data(self, param: Dict) -> str:
+        template = self._jinja.get_template(self.TEMPLATE_NAME)
+        return template.render(param)
 
     def create(self):
         self._log.info(f"Generating %s encounter", len(self.get_params()))
 
         with open(self.get_output_dir(), "w") as output:
             for param in self.get_params():
-                template = self._jinja.get_template(self.TEMPLATE_NAME)
-                encounter_data = template.render(param)
-
-                output.write(json.dumps(json.loads(encounter_data)))
+                output.write(json.dumps(json.loads(self.render_data(param))))
                 output.write("\n")

@@ -26,7 +26,7 @@ class Organization:
     def process(self, total: int = 0):
         self._log.info(f"Prepare organization")
 
-        identifier = str(random_randrange(100_000, 100_000_000))
+        identifier = f"1{self._faker.random_number(digits=9, fix_len=True)}"
         mobile_number = self._faker.random_number(digits=10, fix_len=True)
         name = self._faker.company_suffix()
 
